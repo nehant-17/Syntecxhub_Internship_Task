@@ -1,6 +1,6 @@
 # Syntecxhub_Internship_Task
 
-# Task 1
+# Task 1 : House Price Prediction
 
 A Machine Learning project that predicts house prices using the California Housing dataset. This project demonstrates a complete ML workflow including data preprocessing, exploratory data analysis (EDA), feature engineering, model training, evaluation, and model saving.
 
