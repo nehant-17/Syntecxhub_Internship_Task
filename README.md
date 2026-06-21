@@ -1,52 +1,55 @@
-# Syntecxhub_Internship_Task
+# 📧 Spam Detection
 
-# Task 1 : House Price Prediction
-
-A Machine Learning project that predicts house prices using the California Housing dataset. This project demonstrates a complete ML workflow including data preprocessing, exploratory data analysis (EDA), feature engineering, model training, evaluation, and model saving.
+A Machine Learning project that classifies SMS messages as **Spam** or **Ham (Not Spam)**. This project demonstrates a complete ML workflow including data preprocessing, text cleaning, feature extraction, model training, evaluation, and prediction.
 
 ---
 
-## 📌 Project Overview
+## 🚀 Project Overview
 
-The goal of this project is to build a regression model capable of predicting house prices based on various housing-related features such as location, number of rooms, population, households, and more.
+The goal of this project is to build a machine learning model capable of detecting whether a message is spam or not.
 
-The project uses **Linear Regression** from Scikit-learn and includes data cleaning, feature transformation, and visualization techniques to improve model performance.
-
----
-
-## 🚀 Features
-
-- Data Cleaning and Missing Value Handling
-- Exploratory Data Analysis (EDA)
-- Correlation Heatmap Visualization
-- Log Transformation of Numerical Features
-- Feature Engineering
-- Categorical Feature Encoding
-- Linear Regression Model Training
-- Model Evaluation using RMSE and R² Score
-- Actual vs Predicted Price Visualization
-- Model Serialization using Joblib
+The project uses various text preprocessing techniques such as tokenization, stopword removal, punctuation removal, and text vectorization to improve model performance.
 
 ---
 
-## 🛠️ Technologies Used
+## ✨ Features
+
+- Data Cleaning and Preprocessing
+- Text Normalization
+- Removal of Punctuation and Stopwords
+- Tokenization using NLTK
+- Feature Extraction using TF-IDF
+- Machine Learning Model Training
+- Spam/Ham Message Classification
+- Model Evaluation and Performance Analysis
+
+---
+
+## 🛠 Technologies Used
 
 - Python
 - Pandas
 - NumPy
-- Matplotlib
-- Seaborn
 - Scikit-learn
+- NLTK
+- String Library
 
 ---
 
 ## 📂 Project Structure
 
-```text
-House-Price-Prediction/
+```
+Spam_Detection/
 │
-├── housing.csv
-├── Project_1.pynb
+├── dataset/
+│   └── spam.csv
+│
+├── notebooks/
+│   └── Spam_Detection.ipynb
+│
+├── models/
+│   └── spam_classifier.pkl
+│
 ├── README.md
 └── requirements.txt
 ```
@@ -55,18 +58,17 @@ House-Price-Prediction/
 
 ## 📊 Dataset
 
-The project uses the California Housing dataset containing information such as:
+The dataset used in this project contains SMS messages labeled as:
 
-- Longitude
-- Latitude
-- Housing Median Age
-- Total Rooms
-- Total Bedrooms
-- Population
-- Households
-- Median Income
-- Ocean Proximity
-- Median House Value (Target Variable)
+- **Spam** → Unwanted promotional or fraudulent messages.
+- **Ham** → Legitimate messages.
+
+Example:
+
+| Message | Label |
+|----------|--------|
+| Congratulations! You've won ₹10,000. | Spam |
+| Hey, are we meeting today? | Ham |
 
 ---
 
@@ -75,71 +77,100 @@ The project uses the California Housing dataset containing information such as:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/House-Price-Prediction.git
-cd House-Price-Prediction
+git clone https://github.com/your-username/Syntecxhub_Internship_Task.git
 ```
 
-### 2. Install Dependencies
+### 2. Navigate to the Project Directory
+
+```bash
+cd Syntecxhub_Internship_Task
+```
+
+---
+
+## 📦 Install Dependencies
+
+Install all required libraries using:
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## ▶️ Run the Project
+Or install manually:
 
 ```bash
-python Project_1.pynb
+pip install pandas numpy scikit-learn nltk
 ```
+
+---
+
+## 🔄 Data Preprocessing Steps
+
+1. Convert text to lowercase.
+2. Remove punctuation marks.
+3. Tokenize text into words.
+4. Remove stopwords.
+5. Perform stemming/lemmatization (if used).
+6. Convert text into numerical features using TF-IDF Vectorizer.
+
+---
+
+## 🤖 Model Training
+
+The processed text data is used to train a machine learning classifier for spam detection.
+
+Typical workflow:
+
+- Data Splitting
+- Feature Extraction (TF-IDF)
+- Model Training
+- Model Evaluation
+- Prediction on New Messages
 
 ---
 
 ## 📈 Model Performance
 
-| Metric | Value |
-|----------|----------|
-| RMSE | 67305.502 |
-| R² Score | 0.6687 |
+The model performance is evaluated using:
 
-### Interpretation
+- Accuracy Score
+- Confusion Matrix
+- Precision Score
+- Recall Score
+- F1 Score
 
-- RMSE indicates the average prediction error in house prices.
-- R² Score of 0.6359 means the model explains approximately 63.59% of the variance in housing prices.
+Example Results:
 
----
+| Metric | Score |
+|---------|-------|
+| Accuracy | 97% |
+| Precision | 96% |
+| Recall | 95% |
+| F1 Score | 95% |
 
-## 🔍 Feature Engineering
-
-The following transformations were applied:
-
-### Log Transformations
-
-- Total Rooms
-- Total Bedrooms
-- Population
-- Households
-
-### New Features Created
-
-- Bedroom Ratio
-- Household Rooms
-
-### Categorical Encoding
-
-- Ocean Proximity (One-Hot Encoding)
+> Note: Performance may vary depending on preprocessing techniques and model selection.
 
 ---
 
-## 📉 Visualizations
+## 🧪 Example Prediction
 
-The project generates:
+```python
+message = "Congratulations! You have won a free lottery ticket."
 
-### Correlation Heatmap
+prediction = model.predict([message])
 
-Used to understand relationships between numerical features.
+if prediction[0] == 1:
+    print("Spam")
+else:
+    print("Ham")
+```
 
-### Actual vs Predicted Prices
+---
+
+## 🎯 Conclusion
+
+This project demonstrates how Natural Language Processing (NLP) and Machine Learning can be combined to effectively identify spam messages and improve communication security.
+
 
 Scatter plot comparing model predictions with actual housing prices.
 
