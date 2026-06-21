@@ -1,4 +1,4 @@
-# 📧 Spam Detection
+# Task 2 :  Spam Detection
 
 A Machine Learning project that classifies SMS messages as **Spam** or **Ham (Not Spam)**. This project demonstrates a complete ML workflow including data preprocessing, text cleaning, feature extraction, model training, evaluation, and prediction.
 
