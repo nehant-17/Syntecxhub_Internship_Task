@@ -41,15 +41,8 @@ The project uses various text preprocessing techniques such as tokenization, sto
 ```
 Spam_Detection/
 │
-├── dataset/
-│   └── spam.csv
-│
-├── notebooks/
-│   └── Spam_Detection.ipynb
-│
-├── models/
-│   └── spam_classifier.pkl
-│
+├── spam_ham_dataset.csv
+├── Project_2.pynb
 ├── README.md
 └── requirements.txt
 ```
@@ -58,17 +51,10 @@ Spam_Detection/
 
 ## 📊 Dataset
 
-The dataset used in this project contains SMS messages labeled as:
+The dataset used in this project contains E-mails labeled as:
 
 - **Spam** → Unwanted promotional or fraudulent messages.
 - **Ham** → Legitimate messages.
-
-Example:
-
-| Message | Label |
-|----------|--------|
-| Congratulations! You've won ₹10,000. | Spam |
-| Hey, are we meeting today? | Ham |
 
 ---
 
@@ -143,27 +129,14 @@ Example Results:
 
 | Metric | Score |
 |---------|-------|
-| Accuracy | 97% |
-| Precision | 96% |
-| Recall | 95% |
-| F1 Score | 95% |
+| Precision_score | 0.9563758389261745 |
+| Recall_score | 0.9726962457337884 |
+| F1_Score | 0.9644670050761421 |
 
 > Note: Performance may vary depending on preprocessing techniques and model selection.
 
 ---
 
-## 🧪 Example Prediction
-
-```python
-message = "Congratulations! You have won a free lottery ticket."
-
-prediction = model.predict([message])
-
-if prediction[0] == 1:
-    print("Spam")
-else:
-    print("Ham")
-```
 
 ---
 
@@ -172,6 +145,5 @@ else:
 This project demonstrates how Natural Language Processing (NLP) and Machine Learning can be combined to effectively identify spam messages and improve communication security.
 
 
-Scatter plot comparing model predictions with actual housing prices.
 
 ---
